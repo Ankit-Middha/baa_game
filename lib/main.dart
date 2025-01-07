@@ -33,77 +33,81 @@ class HomePage extends StatelessWidget {
         title: const Text('Select a Game'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Card for Sheep Puzzle Game
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => GameWidget(game: SheepPuzzleGame()),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Card for Sheep Puzzle Game
+
+              
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GameWidget(game: SheepPuzzleGame()),
+                    ),
+                  );
+                },
+                child: Card(
+                  color: Colors.lightBlue[100],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                );
-              },
-              child: Card(
-                color: Colors.lightBlue[100],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 150,
-                  child: Center(
-                    child: Text(
-                      'Sheep Puzzle\nGame',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 100,
+                    child: Center(
+                      child: Text(
+                        'Sheep Puzzle\nGame',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
-            // Card for Baa Game
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => GameWidget(game: BaaGame()),
+              const SizedBox(height: 16),
+              // Card for Baa Game
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GameWidget(game: BaaGame()),
+                    ),
+                  );
+                },
+                child: Card(
+                  color: Colors.amber[100],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                );
-              },
-              child: Card(
-                color: Colors.amber[100],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 150,
-                  child: Center(
-                    child: Text(
-                      'Sheep Clif\nGame',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 100,
+                    child: Center(
+                      child: Text(
+                        'Sheep Clif\nGame',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

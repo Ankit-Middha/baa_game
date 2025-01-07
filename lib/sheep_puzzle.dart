@@ -8,33 +8,33 @@ class SheepPuzzleGame extends FlameGame {
   Future<void> onLoad() async {
     super.onLoad();
 
-    // Add the background
+    //  background
     add(SpriteComponent()
       ..sprite = await loadSprite('background.png')
       ..size = size);
 
-    // Add the body (static target area)
+    //  body (static target area)
     add(SheepPart(
       spritePath: 'sheep_body.png',
-      position: Vector2(size.x / 2 - 100, size.y / 2),
+      position: Vector2(size.x/2, size.y / 2),
       isTarget: true,
     ));
 
-    // Add the draggable head
+    //  draggable head
     add(SheepPart(
       spritePath: 'head.png',
       position: Vector2(50, 50),
       targetPosition: Vector2(size.x / 2 - 100, size.y / 2 - 100),
     ));
 
-    // Add draggable combined legs
+    //  draggable combined legs
     add(CombinedLegs(
       spritePath: 'legs.png', // Correctly passing spritePath
       position: Vector2(50, size.y - 150),
       targetPosition: Vector2(size.x / 2 - 100, size.y / 2 + 50),
     ));
 
-    // Add the draggable tail
+    // the draggable tail
     add(SheepPart(
       spritePath: 'tail.png',
       position: Vector2(size.x - 100, size.y - 150),
@@ -88,7 +88,7 @@ class CombinedLegs extends SpriteComponent with DragCallbacks,HasGameRef {
     required this.spritePath, // Define the spritePath parameter
     required Vector2 position,
     required this.targetPosition,
-  }) : super(size: Vector2(200, 100), position: position);
+  }) : super(size: Vector2(100, 100), position: position);
 
   @override
   Future<void> onLoad() async {
